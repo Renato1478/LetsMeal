@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MealsToGo",
-    "slug": "MealsToGo",
+    "name": "letsmeal",
+    "slug": "letsmeal",
     "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.android.mealstogo"
+      "package": "com.android.letsmeal"
     },
     "web": {
       "favicon": "./assets/favicon.png"
