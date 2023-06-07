@@ -16,6 +16,8 @@ import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 
+import { restaurantsRequest } from "./src/services/restaurant/restaurant.service";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -36,7 +38,7 @@ const Map = () => (
 );
 
 const createScreenOptions = ({ route }) => {
-  console.log('Ionicons >', Ionicons)
+  console.log("Ionicons >", Ionicons);
   const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ size, color }) => (
