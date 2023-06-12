@@ -5,7 +5,7 @@ Let's Meal is a mobile application developed with React Native that allows users
 ## Features
 
 - Browse available restaurants
-- View restaurant details, including location on a map
+- View restaurant details, including location on google maps
 - Explore the menu and select items
 - Simulate the payment process using Stripe
 <!-- 
