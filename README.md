@@ -1,4 +1,4 @@
-# Let's Meal (Not Finished Yet)
+# Let's Meal (not finished yet)
 
 Let's Meal is a mobile application developed with React Native that allows users to explore and order meals from various restaurants. It utilizes Lottie for animations, Styled Components for styling, Google API for rendering restaurant locations, Firebase for data storage, and Stripe for payment simulation.
 
