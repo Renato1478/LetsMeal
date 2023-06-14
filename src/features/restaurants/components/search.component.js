@@ -11,15 +11,11 @@ const SearchContainer = styled.View`
 `;
 
 export default function Search() {
-  // Hooks
+  // ** Hooks
   const { keyword, search } = useContext(LocationContext);
 
   // ** States
   const [searchKeyword, setSearchKeyword] = useState(keyword);
-
-  useEffect(() => {
-    search(searchKeyword);
-  }, []);
 
   return (
     <SearchContainer>
