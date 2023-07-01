@@ -7,7 +7,11 @@ import { Searchbar } from "react-native-paper";
 import { LocationContext } from "../../../services/location/location.context";
 
 const SearchContainer = styled.View`
+  position: absolute;
   padding: ${(props) => props.theme.space[3]};
+  top: 40px;
+  z-index: 999;
+  width: 100%;
 `;
 
 export default function Search() {
