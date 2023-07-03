@@ -53,7 +53,7 @@ export const MapScreen = () => {
                 latitude: restaurant.geometry.location.lat,
               }}
             >
-              <Callout>
+              <Callout style={{ padding: 0 }}>
                 <MapCallout restaurant={restaurant} />
               </Callout>
             </Marker>
