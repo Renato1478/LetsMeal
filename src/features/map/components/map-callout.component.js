@@ -1,9 +1,9 @@
 import React from "react";
 
-import CompactRestaurantInfo from "../../../components/restaurant/compact-restaurant-info";
+import { CompactRestaurantMapInfo } from "../../../components/restaurant/compact-restaurant-map-info";
 
 const MapCallout = ({ restaurant }) => {
-  return <CompactRestaurantInfo restaurant={restaurant} />;
+  return <CompactRestaurantMapInfo restaurant={restaurant} />;
 };
 
 export default MapCallout;
