@@ -11,12 +11,13 @@ import {
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { onLogin } = useContext(AuthenticationContext);
+  const { onLogin, error } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground blurRadius={2}>
@@ -43,6 +44,11 @@ const LoginScreen = () => {
             onChangeText={(value) => setPassword(value)}
           />
         </Spacer>
+        {error.length ? (
+          <Spacer size="large">
+            <Text variant="error">Erro! Verifique seu e-mail e senha</Text>
+          </Spacer>
+        ) : null}
         <Spacer size="large">
           <AuthButton
             mode="contained"
