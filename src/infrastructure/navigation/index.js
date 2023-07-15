@@ -10,17 +10,11 @@ import { AccountNavigator } from "./account.navigator";
 function Navigation() {
   const { isAuthenticated } = useContext(AuthenticationContext);
 
-  console.log("isAuthenticated", isAuthenticated);
   return (
     <NavigationContainer>
       {isAuthenticated ? <AppNavigator /> : <AccountNavigator />}
     </NavigationContainer>
   );
-  // return (
-  //   <NavigationContainer>
-  //     <AppNavigator />
-  //   </NavigationContainer>
-  // );
 }
 
 export default Navigation;
