@@ -17,7 +17,7 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { onLogin, error } = useContext(AuthenticationContext);
+  const { onLogin, isLoading, error } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground blurRadius={2}>
@@ -39,20 +39,20 @@ const LoginScreen = () => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
-            secure
             value={password}
             onChangeText={(value) => setPassword(value)}
           />
         </Spacer>
         {error.length ? (
           <Spacer size="large">
-            <Text variant="error">Erro! Verifique seu e-mail e senha</Text>
+            <Text variant="error">{error}</Text>
           </Spacer>
         ) : null}
         <Spacer size="large">
           <AuthButton
             mode="contained"
             icon="lock-open-outline"
+            loading={isLoading}
             onPress={() => {
               onLogin(email, password);
             }}
