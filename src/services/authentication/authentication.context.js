@@ -10,12 +10,11 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [error, setError] = useState([]);
 
   onAuthStateChanged(getAuth(), (usr) => {
-    console.log("auth state changed!");
-    console.log("auth:", getAuth());
     if (usr) {
       setUser(usr);
       setIsLoading(false);
     } else {
+      setUser(null);
       setIsLoading(false);
     }
   });
@@ -56,11 +55,7 @@ export const AuthenticationContextProvider = ({ children }) => {
   };
 
   const onLogout = () => {
-    setUser(null);
     signOut(getAuth());
-
-    console.log("did logout!");
-    console.log("auth:", getAuth());
   };
 
   return (
