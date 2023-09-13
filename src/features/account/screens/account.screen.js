@@ -5,6 +5,7 @@ import {
   AccountCover,
   AccountContainer,
   AuthButton,
+  Title,
 } from "../components/account.styles";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -12,6 +13,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground blurRadius={2}>
+      <Title>Let's Meal</Title>
       <AccountCover />
       <AccountContainer>
         <AuthButton

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import {
   AccountBackground,
@@ -6,6 +6,8 @@ import {
   AccountCover,
   AuthButton,
   AuthInput,
+  ErrorContainer,
+  Title,
 } from "../components/account.styles";
 
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
@@ -13,15 +15,22 @@ import { AuthenticationContext } from "../../../services/authentication/authenti
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
 
-  const { onRegister, isLoading, error } = useContext(AuthenticationContext);
+  const { onRegister, isLoading, error, setError } = useContext(
+    AuthenticationContext
+  );
+
+  useEffect(() => {
+    setError([]);
+  }, []);
 
   return (
     <AccountBackground blurRadius={2}>
+      <Title>Let's Meal</Title>
       <AccountCover />
       <AccountContainer>
         <AuthInput
@@ -56,9 +65,9 @@ const RegisterScreen = () => {
           />
         </Spacer>
         {error.length ? (
-          <Spacer size="large">
+          <ErrorContainer>
             <Text variant="error">{error}</Text>
-          </Spacer>
+          </ErrorContainer>
         ) : null}
         <Spacer size="large">
           <AuthButton
@@ -73,6 +82,11 @@ const RegisterScreen = () => {
           </AuthButton>
         </Spacer>
       </AccountContainer>
+      <Spacer size={"large"}>
+        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+          Back
+        </AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };

@@ -50,6 +50,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         error,
         onLogin,
         onRegister,
+        setError,
       }}
     >
       {children}
