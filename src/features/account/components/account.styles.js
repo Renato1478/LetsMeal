@@ -50,3 +50,11 @@ export const ErrorContainer = styled.View`
 export const AuthInput = styled(TextInput)`
   width: 300px;
 `;
+
+export const AnimationWrapper = styled.View`
+  width: 40%;
+  height: 30%;
+  position: absolute;
+  top: 15px;
+  padding: ${(props) => props.theme.space[2]};
+`;

@@ -1,11 +1,14 @@
 import React from "react";
 
+import LottieView from "lottie-react-native";
+
 import {
   AccountBackground,
   AccountCover,
   AccountContainer,
   AuthButton,
   Title,
+  AnimationWrapper,
 } from "../components/account.styles";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -15,6 +18,15 @@ const AccountScreen = ({ navigation }) => {
     <AccountBackground blurRadius={2}>
       <Title>Let's Meal</Title>
       <AccountCover />
+      <AnimationWrapper>
+        <LottieView
+          key={"animation"}
+          autoPlay
+          loop
+          resizeMode="cover"
+          source={require("../../../../assets/animation-food.json")}
+        />
+      </AnimationWrapper>
       <AccountContainer>
         <AuthButton
           mode="contained"

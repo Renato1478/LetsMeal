@@ -38,10 +38,10 @@ export const AuthenticationContextProvider = ({ children }) => {
 
     if (password !== repeatedPassword) {
       setError("Error! Passwords do not match");
+      setIsLoading(false);
       return;
     }
 
-    setIsLoading(true);
     registerRequest(email, password)
       .then((u) => {
         setUser(u);
